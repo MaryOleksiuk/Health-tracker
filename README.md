@@ -1,8 +1,5 @@
 <h1>
-    <a href="https://lectrum.io" target="_blank" rel="noopener noreferrer">
-        <img src="./public/logo-woodsmoke.svg" alt="Lectrum favicon" width="25" />
-    </a>
-   React и Redux
+   React & Redux & Swagger UI
 </h1>
 
 <br>
