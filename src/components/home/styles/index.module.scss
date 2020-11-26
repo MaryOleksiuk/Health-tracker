@@ -1,0 +1,40 @@
+@import 'palette';
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Roboto';
+
+  .wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .content {
+      display: flex;
+      margin-top: 77px;
+
+      .navigation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 744px;
+        margin-left: 89px;
+        margin-right: 100px;
+
+        h1 {
+          font-size: 33px;
+          font-weight: 700;
+          color: $color4;
+        }
+
+        .items {
+          margin-top: 24px;
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

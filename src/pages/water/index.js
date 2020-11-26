@@ -1,0 +1,37 @@
+import React from 'react';
+import { Base } from '../../views/base';
+import { useProfileInit } from '../../bus/user/hooks/useProfileInit';
+import { useScoreInit } from '../../bus/tracker/hooks/useScoreInit';
+import { useScore } from '../../bus/tracker/hooks/useScore';
+import { useProfile } from '../../bus/user/hooks/useProfile';
+import { useRecord } from '../../bus/tracker/hooks/useRecord';
+import { useRecordInit } from '../../bus/tracker/hooks/useRecordInit';
+import { QuestionInput } from '../../components/questionInput';
+import { questionData } from './questionData';
+import {QuestionCheckbox} from "../../components/questionCheckbox";
+
+export const Water = () => {
+  useProfileInit();
+  useScoreInit();
+  useRecordInit(questionData.kind);
+
+  const {
+    profile,
+    logout
+  } = useProfile();
+
+  const { record, updateRecord, createRecord, isLoading } = useRecord();
+  const { score } = useScore();
+
+  return (
+    <Base logout={logout} profile={profile} hideWidget={false} isFullWidth={false} isFlex={true} score={score}>
+      <QuestionCheckbox
+        isLoading={isLoading}
+        data={questionData}
+        update={updateRecord}
+        create={createRecord}
+        initialValue={record.water}
+      />
+    </Base>
+  )
+}

@@ -1,0 +1,51 @@
+@import "palette";
+
+.question {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  .answers {
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+
+    .sendAnswer {
+      display: block;
+
+      &.loading {
+        pointer-events: none;
+        background-color: rgba($color4, 0.5);
+      }
+    }
+
+    .answer {
+      color: $color3;
+      text-decoration: underline;
+      font-weight: 500;
+      font-size: 14px;
+      margin-right: 30px;
+
+      &:hover {
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      &.selected {
+        text-decoration: none;
+        background-color: $color3;
+        color: $color2;
+        border-radius: 3px;
+        padding: 7px 16px;
+
+        &:hover {
+          cursor: initial;
+        }
+      }
+    }
+  }
+}
+
+input[type=radio] {
+  opacity: 0;
+}
